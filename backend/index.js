@@ -4,6 +4,8 @@ import cookieParser from "cookie-parser"
 import dotenv from "dotenv"
 import { connectDb } from "./src/config/db.js"
 import authRoutes from "./src/routes/auth.routes.js"
+import blogRoutes from "./src/routes/blog.route.js"
+import productRoutes from "./src/routes/product.routes.js"
 import { errorHandler } from "./src/middlewares/errorHandler.js"
 
 
@@ -16,6 +18,8 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use("/api/v1/auth",authRoutes)
+app.use("/api/v1/blog",blogRoutes)
+app.use("/api/v1/products",productRoutes)
 
 
 
